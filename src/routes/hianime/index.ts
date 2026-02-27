@@ -249,40 +249,6 @@ hianimeRouter.get("/anime/:animeId/episodes", async (c) => {
 });
 
 
-// GET /api/v1/hindidubbed/extract?url=https://servabyss.net/e/abc123
-hindiDubbedRouter.get("/extract", async (c) => {
-  const url = c.req.query("url");
-  if (!url) return c.json({ error: "url required" }, 400);
-
-  try {
-    // Follow short.icu redirect first
-    const resolved = await fetch(url, {
-      headers: { "User-Agent": USER_AGENT },
-      redirect: "follow",
-    });
-    const finalUrl = resolved.url; // actual servabyss/filemoon URL
-
-    // Reuse extractUniversal from hindiapi
-    const result = await extractUniversal(finalUrl);
-
-    if (!result) {
-      return c.json({ status: 404, error: "Could not extract stream", embedUrl: finalUrl });
-    }
-
-    return c.json({
-      status: 200,
-      data: {
-        originalUrl: url,
-        embedUrl: finalUrl,
-        streamUrl: result.streamUrl,
-        headers: result.headers,
-        isM3U8: result.streamUrl.includes(".m3u8"),
-      }
-    });
-  } catch (e: any) {
-    return c.json({ status: 500, error: e.message });
-  }
-});
 
 
 // /api/v1/hianime/anime/{anime-id}/next-episode-schedule
