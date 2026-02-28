@@ -28,6 +28,8 @@ import desidubRouter from "./routes/desidubanime/index.js";
 import { aniworldRouter } from "./routes/aniworld/index.js";
 import { toonStreamRouter } from "./routes/toonstream/index.js";
 import { hindiApiRouter } from "./routes/hindiapi/index.js";
+import { anilistHindiRouter } from "./routes/anilisthindi/index.js";
+import { toonWorldRouter } from "./routes/toonworld/index.js";
 import pkgJson from "../package.json" with { type: "json" };
 
 // API version
@@ -627,6 +629,8 @@ app.route(`${BASE_PATH}/desidubanime`, desidubRouter);
 app.route(`${BASE_PATH}/aniworld`, aniworldRouter);
 app.route(`${BASE_PATH}/toonstream`, toonStreamRouter);
 app.route(`${BASE_PATH}/hindiapi`, hindiApiRouter);
+app.route(`${BASE_PATH}/anilisthindi`, anilistHindiRouter);
+app.route(`${BASE_PATH}/toonworld`, toonWorldRouter);
 
 // ========== ERROR HANDLING ==========
 app.notFound(notFoundHandler);
