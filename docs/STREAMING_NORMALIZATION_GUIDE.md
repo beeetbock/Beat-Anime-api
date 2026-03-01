@@ -18,11 +18,11 @@ Each anime entry includes normalized streaming URLs for all supported providers:
 ```json
 {
   "streaming": {
-    "hianime": "https://tatakaiapi.vercel.app/api/v1/hianime/anime/{mal_id}",
-    "animelok": "https://tatakaiapi.vercel.app/api/v1/animelok/anime/{mal_id}",
-    "watchanimeworld": "https://tatakaiapi.vercel.app/api/v1/watchanimeworld/anime/{mal_id}",
-    "gogoanime": "https://tatakaiapi.vercel.app/api/v1/anime/gogoanime/{title}",
-    "allServers": "https://tatakaiapi.vercel.app/api/v1/streaming/{mal_id}"
+    "hianime": "https://api.tatakai.me/api/v1/hianime/anime/{mal_id}",
+    "animelok": "https://api.tatakai.me/api/v1/animelok/anime/{mal_id}",
+    "watchanimeworld": "https://api.tatakai.me/api/v1/watchanimeworld/anime/{mal_id}",
+    "gogoanime": "https://api.tatakai.me/api/v1/anime/gogoanime/{title}",
+    "allServers": "https://api.tatakai.me/api/v1/streaming/{mal_id}"
   }
 }
 ```
@@ -118,11 +118,11 @@ GET /api/v1/streaming/{mal_id}
             "genres": ["Slice of Life"],
             "image": "https://cdn.myanimelist.net/images/anime/1336/152128.jpg",
             "streaming": {
-              "hianime": "https://tatakaiapi.vercel.app/api/v1/hianime/anime/61924",
-              "animelok": "https://tatakaiapi.vercel.app/api/v1/animelok/anime/61924",
-              "watchanimeworld": "https://tatakaiapi.vercel.app/api/v1/watchanimeworld/anime/61924",
-              "gogoanime": "https://tatakaiapi.vercel.app/api/v1/anime/gogoanime/Muzik Tiger In Forest 2nd Season",
-              "allServers": "https://tatakaiapi.vercel.app/api/v1/streaming/61924"
+              "hianime": "https://api.tatakai.me/api/v1/hianime/anime/61924",
+              "animelok": "https://api.tatakai.me/api/v1/animelok/anime/61924",
+              "watchanimeworld": "https://api.tatakai.me/api/v1/watchanimeworld/anime/61924",
+              "gogoanime": "https://api.tatakai.me/api/v1/anime/gogoanime/Muzik Tiger In Forest 2nd Season",
+              "allServers": "https://api.tatakai.me/api/v1/streaming/61924"
             }
           }
         ]
@@ -144,10 +144,10 @@ curl "http://localhost:4000/api/v1/hianime/schedule"
 # Note the mal_id and streaming URLs
 
 # Step 3: Access from any source
-curl "https://tatakaiapi.vercel.app/api/v1/hianime/anime/52991"
-curl "https://tatakaiapi.vercel.app/api/v1/animelok/anime/52991"
-curl "https://tatakaiapi.vercel.app/api/v1/watchanimeworld/anime/52991"
-curl "https://tatakaiapi.vercel.app/api/v1/anime/gogoanime/One Piece"
+curl "https://api.tatakai.me/api/v1/hianime/anime/52991"
+curl "https://api.tatakai.me/api/v1/animelok/anime/52991"
+curl "https://api.tatakai.me/api/v1/watchanimeworld/anime/52991"
+curl "https://api.tatakai.me/api/v1/anime/gogoanime/One Piece"
 ```
 
 ### Benefits

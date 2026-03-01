@@ -18,7 +18,7 @@ const finalOrigin = allowedOrigins.includes("*") ? "*" : allowedOrigins;
 export const corsConfig = cors({
     origin: finalOrigin,
     allowMethods: ["GET", "POST", "OPTIONS"],
-    allowHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
+    allowHeaders: ["Content-Type", "Authorization", "X-Requested-With", "X-Client-Id", "apikey"],
     exposeHeaders: ["X-RateLimit-Limit", "X-RateLimit-Remaining", "X-Cache-Status"],
     maxAge: 600, // 10 minutes
     credentials: true,
