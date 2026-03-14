@@ -8,6 +8,7 @@ WORKDIR /app
 RUN apk add --no-cache libc6-compat python3 make g++
 
 COPY package*.json ./
+COPY scripts/ ./scripts/
 RUN npm ci --prefer-offline
 
 
@@ -43,6 +44,7 @@ RUN addgroup --system --gid 1001 nodejs \
 
 # Install only production node_modules
 COPY package*.json ./
+COPY scripts/ ./scripts/
 RUN npm ci --omit=dev --prefer-offline && npm cache clean --force
 
 # Copy compiled output
