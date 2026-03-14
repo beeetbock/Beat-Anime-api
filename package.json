@@ -8,6 +8,7 @@
         "start": "node dist/src/server.js",
         "dev": "tsx watch src/server.ts",
         "build": "tsc",
+        "postinstall": "node scripts/patch-aniwatch.js",
         "test": "npx tsx scripts/validate_api.ts",
         "test:comprehensive": "npx tsx scripts/comprehensive_test.ts",
         "test:watch": "vitest",
